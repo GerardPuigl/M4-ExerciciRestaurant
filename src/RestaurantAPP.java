@@ -16,9 +16,9 @@ public class RestaurantAPP {
 		
 		int totalcost;
 		
-		ArrayList<String> menu = new ArrayList();
-		ArrayList<String> price = new ArrayList();
-				
+		String[] menu = new String[5];
+		int[] price = new int[5];		
+		
 	}
 
 }
