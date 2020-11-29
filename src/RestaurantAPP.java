@@ -4,7 +4,7 @@ public class RestaurantAPP {
 
 	public static void main(String[] args) {
 		
-		//Variables necesarias
+		//Variables necessaries
 		
 		final int NOTE5 = 5;
 		final int NOTE10 = 10;
@@ -14,10 +14,10 @@ public class RestaurantAPP {
 		final int NOTE200 = 200;
 		final int NOTE500 = 500;
 		
-		int totalcost;
+		double totalcost;
 		
 		String[] menu = new String[5];
-		int[] price = new int[5];		
+		double[] price = new double[5];		
 		
 	}
 
