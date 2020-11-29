@@ -89,7 +89,6 @@ public class RestaurantAPP {
 		System.out.println("Preu total " + totalcost);
 
 		System.out.println("Gràcies per la vostra comanda!");
-
 	}
 
 }
