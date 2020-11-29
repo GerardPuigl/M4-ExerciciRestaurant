@@ -4,8 +4,8 @@ public class RestaurantAPP {
 
 	public static void main(String[] args) {
 
-		// Variables necesarias
 
+		// Variables necessaries
 		final int NOTE5 = 5;
 		final int NOTE10 = 10;
 		final int NOTE20 = 20;
@@ -19,59 +19,55 @@ public class RestaurantAPP {
 		String[] menu = new String[5];
 		double[] price = new double[5];
 
-		// Introducir nombre y plato para cada ArrayList
+		// Introduir plats i preus dins d'arrays
 		HashMap<String, Double> platePrices = new HashMap<String, Double>();
 
 		platePrices.put("Braves", 4.50);
-		platePrices.put("Chipirons", 6.00);
+		platePrices.put("Xipirons", 6.00);
 		platePrices.put("Pop", 9.50);
 		platePrices.put("Xistorra", 5.40);
 		platePrices.put("Musclos", 8.00);
 
 		int k = 0;
-
 		for (String plate : platePrices.keySet()) {
 			menu[k] = plate;
 			price[k] = platePrices.get(plate);
 			k++;
 		}
 
-		// Mostrar arrays por pantalla
-
+		// Mostrar arrays per pantalla
 		for (int i = 0; i < price.length; i++) {
 			System.out.println(menu[i] + " - " + price[i] + " €");
 		}
 
-		// Solicitud que voleu menjat
-
+		// Sol·licitud de comanda
 		HashMap<String, Integer> order = new HashMap<String, Integer>();
 
 		int keep = 1;
-
 		while (keep != 0) {
-
 			System.out.println("Què voleu menjar?");
 
 			Scanner sc = new Scanner(System.in);
-
 			String plate = sc.next();
+			
 			if (order.get(plate) == null) {
 				order.put(plate, 1);
 			} else {
-				order.put(plate, order.get(sc.next()) + 1);
+				order.put(plate, order.get(plate) + 1);
 			}
 
 			do {
 				try {
 					System.out.println("Voleu demanar un altre plat? (1:Si / 0:No)");
+					
 					Scanner sc1 = new Scanner(System.in);
-
 					keep = sc1.nextInt();
+				
 				} catch (InputMismatchException e) {
 					System.out.println("Heu d'introduir 0 o 1!");
-					keep =3;
+					keep = 3;
 				}
-			} while (keep != 0  && keep != 1);
+			} while (keep != 0 && keep != 1);
 
 		}
 
