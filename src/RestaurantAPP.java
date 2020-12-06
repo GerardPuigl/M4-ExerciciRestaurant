@@ -4,7 +4,6 @@ public class RestaurantAPP {
 
 	public static void main(String[] args) {
 
-
 		// Variables necessaries
 		final int NOTE5 = 5;
 		final int NOTE10 = 10;
@@ -71,8 +70,25 @@ public class RestaurantAPP {
 
 		}
 
-		System.out.println("Gràcies per la vostra comanda!");
+		// Llistat comanda i preu final
+		totalcost = 0;
 
+		for (String plateOrder : order.keySet()) {
+			for (int i = 0; i < order.get(plateOrder); i++) {							//per si demanen 2 vegades un plat
+				try {
+					totalcost = totalcost + platePrices.get(plateOrder);
+
+					System.out.println(plateOrder + " - " + platePrices.get(plateOrder));
+				} catch (Exception e) {
+					System.out.println("El producte " + plateOrder + " no existeix!");
+				}
+			}
+
+		}
+
+		System.out.println("Preu total " + totalcost);
+
+		System.out.println("Gràcies per la vostra comanda!");
 	}
 
 }
