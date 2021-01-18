@@ -3,9 +3,7 @@ import java.util.*;
 public class RestaurantAPP {
 
 	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
-		
+
 		// Variables necessaries
 		final int NOTE5 = 5;
 		final int NOTE10 = 10;
@@ -48,26 +46,21 @@ public class RestaurantAPP {
 		while (keep != 0) {
 			System.out.println("Què voleu menjar?");
 
-
+			Scanner sc = new Scanner(System.in);
 			String plate = sc.next();
 			
-			if(platePrices.containsKey(plate)){
-				
-				if (order.get(plate) == null) {
-					order.put(plate, 1);
-				} else {
-					order.put(plate, order.get(plate) + 1);
-				}		
-				
+			if (order.get(plate) == null) {
+				order.put(plate, 1);
 			} else {
-				System.out.println("El producte " + plate + " no existeix!");
-			}				
+				order.put(plate, order.get(plate) + 1);
+			}
 
 			do {
 				try {
 					System.out.println("Voleu demanar un altre plat? (1:Si / 0:No)");
 					
-					keep = sc.nextInt();
+					Scanner sc1 = new Scanner(System.in);
+					keep = sc1.nextInt();
 				
 				} catch (InputMismatchException e) {
 					System.out.println("Heu d'introduir 0 o 1!");
