@@ -47,21 +47,25 @@ public class RestaurantAPP {
 		int keep = 1;
 		while (keep != 0) {
 			System.out.println("Què voleu menjar?");
-
-
 			String plate = sc.next();
 			
-			if(platePrices.containsKey(plate)){
+			try {
 				
-				if (order.get(plate) == null) {
-					order.put(plate, 1);
+				if (!platePrices.containsKey(plate)) {
+					throw new ItemDontExistException("El producte " + plate + " no existeix!"); 				//Força excepció personalizada
+
 				} else {
-					order.put(plate, order.get(plate) + 1);
-				}		
-				
-			} else {
-				System.out.println("El producte " + plate + " no existeix!");
-			}				
+
+					if (order.get(plate) == null) {
+						order.put(plate, 1);
+					} else {
+						order.put(plate, order.get(plate) + 1);
+					}
+
+				}
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
 
 			do {
 				try {
@@ -87,6 +91,7 @@ public class RestaurantAPP {
 
 					System.out.println(plateOrder + " - " + platePrices.get(plateOrder));
 				} catch (Exception e) {
+					System.out.println(e);
 					System.out.println("El producte " + plateOrder + " no existeix!");
 				}
 			}
