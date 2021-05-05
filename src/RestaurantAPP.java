@@ -1,4 +1,3 @@
-import java.util.*;
 
 public class RestaurantAPP {
 
@@ -16,8 +15,8 @@ public class RestaurantAPP {
 		
 		double totalcost;
 		
-		String[] menu = new String[5];
-		double[] price = new double[5];		
+		String menu[] = new String[5];
+		double price[] = new double[5];		
 		
 	}
 
