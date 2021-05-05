@@ -1,4 +1,3 @@
-import java.util.*;
 
 public class RestaurantAPP {
 
@@ -13,12 +12,12 @@ public class RestaurantAPP {
 		final int NOTE100 = 100;
 		final int NOTE200 = 200;
 		final int NOTE500 = 500;
-
+		
 		double totalcost;
-
-		String[] menu = new String[5];
-		double[] price = new double[5];
-
+		
+		String menu[] = new String[5];
+		double price[] = new double[5];		
+		
 		// Introducir nombre y plato para cada ArrayList
 		HashMap<String, Double> platePrices = new HashMap<String, Double>();
 
